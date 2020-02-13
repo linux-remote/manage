@@ -1,0 +1,22 @@
+{
+  "name": "@linux-remote/manage",
+  "version": "3.0.0",
+  "author": {
+    "name": "Du Wei",
+    "email": "hezedu@hotmail.com"
+  },
+  "bin": {
+    "linux-remote-manage": "index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:linux-remote/linux-remote.git"
+  },
+  "license": "MIT",
+  "email": "hezedu@hotmail.com",
+  "description": "A webside remote desktop of Linux.",
+  "dependencies": {}
+}
