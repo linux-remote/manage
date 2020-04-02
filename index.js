@@ -1,4 +1,4 @@
-const { spawnSync, execSync } = require('child_process');
+const { execSync } = require('child_process');
 const { username } = require('./lib/constant');
 const os = require('os');
 
@@ -25,15 +25,9 @@ const lrCmdMap = new Map([
 ]);
 
 if(lrCmdMap.has(command)){
-  _execSync(cmd);
+  execSync(cmd, {
+    cwd: __dirname
+  });
 } else {
   errLog(`Unsupported command: ${command}`);
-}
-
-function  _execSync(cmd){
-  console.log(cmd);
-  execSync(cmd, {
-    cwd: __dirname,
-    stdio: 'inherit'
-  });
 }
