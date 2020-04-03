@@ -41,3 +41,5 @@ function manage(command){
     errLog(`Unsupported command: '${command}'`);
   }
 }
+
+module.exports = manage;
