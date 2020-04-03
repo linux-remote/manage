@@ -5,29 +5,25 @@ const { username } = require('./lib/constant');
 const { warnLog, errLog } = require('./lib/util/util.js');
 const os = require('os');
 
-function manage(command){
+function manage(command, cliVersion){
   const userInfo = os.userInfo();
   if(userInfo.username !== username){
-    warnLog(`You need run command as '${username}' user.`);
+    errLog(`You are not user '${username}'.`);
     return;
   }
   if(command === 'install'){
 
-    require('./lib/install')();
+    require('./lib/install')(cliVersion);
 
   } else if(command === 'update'){
 
-    require('./lib/update')();
+    require('./lib/update')(cliVersion);
 
   } else if(command === 'reload'){
 
     require('./lib/reload')();
 
-  } else if(command === '-v'){
-
-    require('./lib/version')();
-
-  } else if(command === 'start'){
+  }  else if(command === 'start'){
 
     require('./lib/start')();
 

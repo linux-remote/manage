@@ -1,12 +1,9 @@
 {
   "name": "@linux-remote/manage",
-  "version": "4.0.7",
+  "version": "4.1.6",
   "author": {
     "name": "Du Wei",
     "email": "hezedu@hotmail.com"
-  },
-  "bin": {
-    "linux-remote-manage": "index.js"
   },
   "files": [
     "lib",
