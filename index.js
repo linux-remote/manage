@@ -1,38 +1,43 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
+"use strict";
 const { username } = require('./lib/constant');
-const { warnLog, errLog } = require('./lib/util');
+const { warnLog, errLog } = require('./lib/util/util.js');
 const os = require('os');
 
-const args = process.argv;
-const nodeSh = args[0];
-const command = args[2];
-let params = args.slice(3);
-params = params.length ? ' ' + params.join(' ') : '';
-const cmd = `${nodeSh} ./lib/${command}.js${params}`;
+function manage(command){
+  const userInfo = os.userInfo();
+  if(userInfo.username !== username){
+    warnLog(`You need run command as '${username}' user.`);
+    return;
+  }
+  if(command === 'install'){
 
-const userInfo = os.userInfo();
-if(userInfo.username !== username){
-  warnLog(`You need run command as '${username}' user.`);
-  return;
-}
+    require('./lib/install')();
 
+  } else if(command === 'update'){
 
+    require('./lib/update')();
 
-const lrCmdMap = new Map([
-  ['install', true],
-  ['start', true],
-  ['stop', true],
-  ['restart', true],
-  ['reload', true],
-  ['update', true]
-]);
+  } else if(command === 'reload'){
 
-if(lrCmdMap.has(command)){
-  execSync(cmd, {
-    cwd: __dirname
-  });
-} else {
-  errLog(`Unsupported command: '${command}'`);
+    require('./lib/reload')();
+
+  } else if(command === '-v'){
+
+    require('./lib/version')();
+
+  } else if(command === 'start'){
+
+    require('./lib/start')();
+
+  } else if(command === 'stop'){
+    
+    require('./lib/stop')();
+
+  } else if(command === 'restart'){
+    require('./lib/stop')();
+  } else {
+    errLog(`Unsupported command: '${command}'`);
+  }
 }
