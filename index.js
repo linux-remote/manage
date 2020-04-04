@@ -6,6 +6,10 @@ const { warnLog, errLog } = require('./lib/util/util.js');
 const os = require('os');
 
 function manage(command, cliVersion){
+  if(command === '-v'){ // everybody
+    require('./lib/version')(cliVersion);
+    return;
+  }
   const userInfo = os.userInfo();
   if(userInfo.username !== username){
     errLog(`You are not user '${username}'.`);
@@ -31,6 +35,8 @@ function manage(command, cliVersion){
     
     require('./lib/stop')();
 
+  } else if(command === 'serverinfo'){
+    require('./lib/server-info')();
   } else if(command === 'restart'){
     require('./lib/stop')();
   } else {
