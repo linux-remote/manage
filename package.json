@@ -1,6 +1,6 @@
 {
   "name": "@linux-remote/manage",
-  "version": "4.3.1",
+  "version": "4.3.3",
   "author": {
     "name": "Du Wei",
     "email": "hezedu@hotmail.com"
@@ -9,9 +9,12 @@
     "lib",
     "index.js"
   ],
+  "scripts": {
+    "publish": "node ../linux-remote/up-version-map.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:linux-remote/linux-remote.git"
+    "url": "git@github.com:linux-remote/manage.git"
   },
   "license": "MPL-2.0",
   "email": "hezedu@hotmail.com",
