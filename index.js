@@ -2,7 +2,7 @@
 
 "use strict";
 const { username } = require('./lib/constant');
-const { warnLog, errLog } = require('./lib/util/util.js');
+const { errLog } = require('./lib/util/util.js');
 const os = require('os');
 
 function manage(command, cliVersion){
@@ -36,7 +36,9 @@ function manage(command, cliVersion){
     require('./lib/stop')();
 
   } else if(command === 'serverinfo'){
+    
     require('./lib/server-info')();
+
   } else if(command === 'restart'){
     require('./lib/stop')();
   } else {
