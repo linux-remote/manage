@@ -40,7 +40,7 @@ function manage(command, cliVersion){
     require('./lib/server-info')();
 
   } else if(command === 'restart'){
-    require('./lib/stop')();
+    require('./lib/restart')();
   } else {
     errLog(`Unsupported command: '${command}'`);
   }
