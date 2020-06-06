@@ -1,6 +1,6 @@
 {
   "name": "@linux-remote/manage",
-  "version": "4.5.1",
+  "version": "4.6.1",
   "author": {
     "name": "Du Wei",
     "email": "hezedu@hotmail.com"
@@ -10,7 +10,8 @@
     "index.js"
   ],
   "scripts": {
-    "publish": "node ../linux-remote/up-version-map.js"
+    "publish": "node ../linux-remote/up-version-map.js",
+    "p": "npm publish --access public"
   },
   "repository": {
     "type": "git",
