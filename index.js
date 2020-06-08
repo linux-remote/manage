@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 "use strict";
-const {homeDir, username } = require('./lib/constant.js');
-
 if(!process.env.NODE_ENV){
-  process.env.NODE_ENV = __dirname.indexOf(homeDir) === 0 ? 'production' : 'development';
+  process.env.NODE_ENV = 'production';
 }
+
+const { username } = require('./lib/constant.js');
+
 
 const { errLog } = require('./lib/util/util.js');
 const os = require('os');
