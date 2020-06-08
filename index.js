@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 "use strict";
-const { username } = require('./lib/constant');
+const { username } = require('./lib/constant.js');
 const { errLog } = require('./lib/util/util.js');
 const os = require('os');
 

@@ -1,6 +1,6 @@
 {
   "name": "@linux-remote/manage",
-  "version": "4.8.0",
+  "version": "4.9.0",
   "author": {
     "name": "Du Wei",
     "email": "hezedu@hotmail.com"
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "publish": "node ../linux-remote/up-version-map.js",
-    "p": "npm publish --access public"
+    "p": "npm publish --access public",
+    "ilint": "npm install babel-eslint eslint"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,5 @@
   "license": "MPL-2.0",
   "email": "hezedu@hotmail.com",
   "description": "linux-remote project management",
-  "dependencies": {},
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0"
-  }
+  "dependencies": {}
 }
