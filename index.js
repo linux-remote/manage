@@ -4,6 +4,7 @@
 if(!process.env.NODE_ENV){
   process.env.NODE_ENV = 'production';
 }
+process.umask(0o022); // Some system default permission is 700.
 
 const { username } = require('./lib/constant.js');
 
